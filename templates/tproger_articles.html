@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости Tproger</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">MyLogo</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1 class="main-title">Новости с Tproger</h1>
+            <ol class="article-list">
+                {% for article in articles %}
+                    <li class="article-item">
+                        <div class="bubble">
+                            <h2 class="article-title">{{ article.title }}</h2>
+                            <a href="{{ article.link }}" target="_blank" class="article-link">Читать дальше</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">Favorites</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="{{ url_for('update_articles_route') }}" class="update-button">Update Habr Articles</a></li>
+                <li><a href="{{ url_for('update_tproger_articles_route') }}" class="update-button">Update Tproger Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="container">
+            <h1 class="main-title">Подборка ресурсов</h1>
+            <ol class="article-list">
+                <!-- Бабл для перехода к статьям с Хабра -->
+                <li class="article-item">
+                    <div class="bubble">
+                        <h2 class="article-title">Статьи с Хабра</h2>
+                        <a href="/articles" class="article-link">Читать последние 50 статей с Хабра</a>
+                    </div>
+                </li>
+                
+                <!-- Бабл для перехода к статьям с Tproger -->
+                <li class="article-item">
+                    <div class="bubble">
+                        <h2 class="article-title">Статьи с Tproger</h2>
+                        <a href="/tproger_articles" class="article-link">Читать последние новости с Tproger</a>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
